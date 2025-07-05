@@ -27,7 +27,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_MSG = os.environ.get("START_MESSAGE", "") #No Need keep it blank
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "5090651635").split()):
+    for x in (os.environ.get("ADMINS", "7654385403").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
