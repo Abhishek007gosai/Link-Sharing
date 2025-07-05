@@ -14,36 +14,37 @@ Links Sharing Started
 """
 
 class Bot(Client):
-    def __init__(self):
-        super().__init__(
-            name="Bot",
-            api_hash=API_HASH,
-            api_id=APP_ID,
-            plugins={"root": "plugins"},
-            workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN,
-        )
-        self.LOGGER = LOGGER
+    def __init__(self):
+        super().__init__(
+            name="Bot",
+            api_hash=API_HASH,
+            api_id=APP_ID,
+            plugins={"root": "plugins"},
+            workers=TG_BOT_WORKERS,
+            bot_token=TG_BOT_TOKEN,
+        )
+        self.LOGGER = LOGGER
 
-    async def start(self):
-        await super().start()
-        usr_bot_me = await self.get_me()
-        self.uptime = datetime.now()
+    async def start(self):
+        await super().start()
+        usr_bot_me = await self.get_me()
+        self.uptime = datetime.now()
 
-        self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info("Bot Running..!\n\nCreated by \nhttps://t.me/Okabe_xRintarou")
-        self.LOGGER(__name__).info(f"{name}")
-        self.username = usr_bot_me.username
+        self.set_parse_mode(ParseMode.HTML)
+        self.LOGGER(__name__).info("Bot Running..!\n\nCreated by \nhttps://t.me/Okabe_xRintarou")
+        self.LOGGER(__name__).info(f"{name}")
+        self.username = usr_bot_me.username
 
-        # Web-response
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"
-        await web.TCPSite(app, bind_address, PORT).start()
+        # Web-response
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
 
-    async def stop(self, *args):
-        await super().stop()
-        self.LOGGER(__name__).info("Bot stopped.")
+    async def stop(self, *args):
+        await super().stop()
+        self.LOGGER(__name__).info("Bot stopped.")
 
-    def run(self):  # ✅ Fix added here
-        asyncio.run(self.start())
+    def run(self):
+        asyncio.run(self.start())
+    
