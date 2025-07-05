@@ -5,26 +5,26 @@ from logging.handlers import RotatingFileHandler
 
 #Recommended
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "0")
-APP_ID = int(os.environ.get("APP_ID", "0"))
-API_HASH = os.environ.get("API_HASH", "0")
+APP_ID = int(os.environ.get("APP_ID", "29245477"))
+API_HASH = os.environ.get("API_HASH", "0abc83883262245c90ca337b7a0375c4")
 
 ##---------------------------------------------------------------------------------------------------
 
 #Main 
-OWNER_ID = int(os.environ.get("OWNER_ID", "5090651635"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "7654385403"))
 PORT = os.environ.get("PORT", "8010")
 
 ##---------------------------------------------------------------------------------------------------
 
 #Database
-DB_URI = os.environ.get("DATABASE_URL", "0")
-DB_NAME = os.environ.get("DATABASE_NAME", "links-sharing")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://nier88881:8qLsalGiPAvbwKTP@cluster0.od2tq6h.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("DATABASE_NAME", "cluster0")
 
 ##---------------------------------------------------------------------------------------------------
 
 #Default
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
-START_MSG = os.environ.get("START_MESSAGE", "") #No Need keep it blank
+START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>Hᴇʏ! Wᴇʟᴄᴏᴍᴇ Tᴏ Nᴇxᴜs Cᴏᴍᴍᴜɴɪᴛʏ. Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴜs ʏᴏᴜ ᴄᴀɴ ᴅᴏ sᴏ ʙʏ sᴜʙsᴄʀɪʙɪɴɢ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ</blockquote></a>") #No Need keep it blank
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "7654385403").split()):
@@ -42,7 +42,7 @@ USER_REPLY_TEXT = None
 
 #Admin == OWNERID
 ADMINS.append(OWNER_ID)
-ADMINS.append(5090651635)
+ADMINS.append(7654385403)
 
 ##---------------------------------------------------------------------------------------------------
 
