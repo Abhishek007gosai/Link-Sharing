@@ -1,8 +1,9 @@
 # --- For-Bot-Working --------- #
 git+https://github.com/Sahil0976/pyrogram
-TgCrypto
 pyromod
 motor
+pyrogram>=2.0.0
+tgcrypto
 # --- For-Database ------------ #
 pymongo
 dnspython
