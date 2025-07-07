@@ -7,6 +7,8 @@ from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, PORT
 from plugins import web_server
 import pyrogram.utils
 from aiohttp import web
+
+# Fix channel ID limit (optional)
 pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 
 name = """
@@ -35,7 +37,7 @@ class Bot(Client):
         self.LOGGER(__name__).info(f"{name}")
         self.username = usr_bot_me.username
 
-        # Web-response
+        # Web-response for Render/Koyeb health check
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
@@ -44,3 +46,8 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
+
+# This block is MANDATORY for hosting
+if __name__ == "__main__":
+    app = Bot()
+    app.run()
