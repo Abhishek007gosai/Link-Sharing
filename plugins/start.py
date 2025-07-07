@@ -54,10 +54,10 @@ async def start_command(client: Bot, message: Message):
                 creates_join_request=is_request
             )
 
-            button_text = "🛎️ Request to Join" if is_request else "🔗 Join Channel"
+            button_text = "Cʟɪᴄᴋ Hᴇʀᴇ Tᴏ Jᴏɪɴ" if is_request else "🔗 Join Channel"
             button = InlineKeyboardMarkup([[InlineKeyboardButton(button_text, url=invite.invite_link)]])
 
-            await message.reply_text("Here is your link! Click below to proceed:", reply_markup=button)
+            await message.reply_text("ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ! ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ", reply_markup=button)
 
             asyncio.create_task(revoke_invite_after_10_minutes(client, channel_id, invite.invite_link, is_request))
 
@@ -67,13 +67,13 @@ async def start_command(client: Bot, message: Message):
     else:
         inline_buttons = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("About Me", callback_data="help"),
-                InlineKeyboardButton("Close", callback_data="close")]
+                [InlineKeyboardButton("ᴀʙᴏᴜᴛ ᴍᴇ", callback_data="help"),
+                InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")]
             ]
         )
         
         await message.reply_text(
-            "<b><i>Welcome to the advanced links sharing bot.\nWith this bot, you can share links and keep your channels safe from copyright issues</i></b>",
+            "<b><i>Welcome to the advanced links sharing bot.\nWith this bot, you can share links and keep your channels safe from issues</i></b>",
             reply_markup=inline_buttons
         )
         
@@ -150,7 +150,7 @@ async def help_callback(client: Bot, callback_query):
     # Define the inline keyboard with the "Close" button
     inline_buttons = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("Close", callback_data="close")]
+            [InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")]
         ]
     )
     
