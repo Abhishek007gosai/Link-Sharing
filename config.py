@@ -26,7 +26,7 @@ DB_NAME = os.environ.get("DATABASE_NAME", "cluster0")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>Hᴇʏ! Wᴇʟᴄᴏᴍᴇ Tᴏ Nᴇxᴜs Cᴏᴍᴍᴜɴɪᴛʏ. Iғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴜs ʏᴏᴜ ᴄᴀɴ ᴅᴏ sᴏ ʙʏ sᴜʙsᴄʀɪʙɪɴɢ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ</blockquote></a>") #No Need keep it blank
 try:
-    ADMINS=[]
+    ADMINS=[7654385403]
     for x in (os.environ.get("ADMINS", "7654385403").split()):
         ADMINS.append(int(x))
 except ValueError:
